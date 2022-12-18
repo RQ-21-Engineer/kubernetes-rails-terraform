@@ -1,11 +1,12 @@
 FROM ruby:3.1.3-alpine
+
 RUN apk add \
   build-base \
   postgresql-dev \
   tzdata \
   nodejs
 
-WORKDIR /app
+WORKDIR /opt/restful
 
 COPY . .
 RUN bundle install
