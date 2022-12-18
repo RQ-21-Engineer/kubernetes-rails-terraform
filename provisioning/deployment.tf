@@ -1,4 +1,4 @@
-resource "kubernetes_deployment" "restful" {
+resource "kubernetes_deployment" "provider" {
 
     metadata {
         name = "restful"
@@ -12,7 +12,7 @@ resource "kubernetes_deployment" "restful" {
             }
         }
 
-        replicas = 5
+        replicas = 1
 
         template {
 
@@ -25,15 +25,25 @@ resource "kubernetes_deployment" "restful" {
             spec {
                 container {
                     name = "restful"
-                    image = ""
+                    image = "qywok/testing:1.0"
                     port {
-                        container_port = 80
+                        container_port = 3001
                     }
                 }
             }
 
         }
 
-    }   
+    }
 
 }
+
+
+
+
+
+
+
+
+
+

@@ -1,13 +1,11 @@
 terraform {
 
-    required_version = "~> 0.13"
-
     required_providers {
-      
-      kube_provider = {
+
+      kubernetes = {
 
         source  = "hashicorp/kubernetes"
-        version = "~> 0.13"
+        version = "2.16.1"
 
       }
 
@@ -25,5 +23,7 @@ terraform {
 provider "kubernetes" {
 
   host = "https://192.168.49.2:8443"
+  config_path = "~/.kube/config"
 }
+
 
